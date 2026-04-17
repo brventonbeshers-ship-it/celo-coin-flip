@@ -36,8 +36,9 @@ export default function Game() {
   const [stats, setStats] = useState<CoinStats>({ flips: 0, wins: 0, lastChoice: 0, lastResult: 0 });
   const [leaderboard, setLeaderboard] = useState<LeaderboardRow[]>([]);
   const [loadError, setLoadError] = useState(false);
+  const [txError, setTxError] = useState<string | null>(null);
 
-  const { writeContract, data: hash, isPending } = useWriteContract();
+  const { writeContractAsync, data: hash, isPending } = useWriteContract();
   const { isLoading: isConfirming, isSuccess } = useWaitForTransactionReceipt({ hash });
 
   const busy = isPending || isConfirming;
@@ -99,15 +100,22 @@ export default function Game() {
     }
   }
 
-  function handleFlip() {
-    if (!isConnected || busy) return;
+  async function handleFlip() {
+    if (!isConnected || !address || busy) return;
 
-    writeContract({
-      ...contractConfig,
-      functionName: "flip",
-      args: [BigInt(choice)],
-      ...(isMiniPay ? { feeCurrency: MINIPAY_FEE_CURRENCY } : {}),
-    } as Parameters<typeof writeContract>[0]);
+    setTxError(null);
+    try {
+      await writeContractAsync({
+        ...contractConfig,
+        account: address,
+        chainId: celo.id,
+        functionName: "flip",
+        args: [BigInt(choice)],
+        ...(isMiniPay ? { feeCurrency: MINIPAY_FEE_CURRENCY } : {}),
+      } as Parameters<typeof writeContractAsync>[0]);
+    } catch (error) {
+      setTxError(error instanceof Error ? error.message.slice(0, 180) : "Transaction rejected or failed.");
+    }
   }
 
   return (
@@ -174,6 +182,7 @@ export default function Game() {
               {loadError && (
                 <p className="text-sm text-coral">Contract data will load after deployment address is set.</p>
               )}
+              {txError && <p className="text-sm text-coral">{txError}</p>}
             </div>
           </div>
         </div>
