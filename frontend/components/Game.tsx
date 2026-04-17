@@ -245,3 +245,5 @@ function CoinFace({ side, spinning }: { side: number; spinning: boolean }) {
     </div>
   );
 }
+
+// game: 1776459731887
