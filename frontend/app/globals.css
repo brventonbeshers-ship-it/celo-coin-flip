@@ -56,3 +56,5 @@ html { scroll-behavior: smooth; }
 
 @keyframes resultPulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
 .result-pulse { animation: resultPulse 0.5s ease-out; }
+
+/* spacing: 1776459539953 */
