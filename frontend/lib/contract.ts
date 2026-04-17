@@ -1,15 +1,4 @@
-import { CeloCoinFlipClient } from "celo-coin-flip-sdk";
-import { CELO_RPC, CONTRACT_ADDRESS } from "./config";
-export type { CoinFlipStats, LeaderboardEntry } from "celo-coin-flip-sdk";
-
-const client = new CeloCoinFlipClient({
-  contractAddress: CONTRACT_ADDRESS,
-  rpcUrl: CELO_RPC,
-});
-
-export const getTotalFlips = () => client.getTotalFlips();
-export const getUserStats = (address: string) => client.getUserStats(address);
-export const getLeaderboard = () => client.getLeaderboard();
+import { CONTRACT_ADDRESS } from "./config";
 
 export const CELO_COIN_FLIP_ABI = [
   {
