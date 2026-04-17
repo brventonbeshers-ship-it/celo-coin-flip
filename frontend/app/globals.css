@@ -66,3 +66,5 @@ html { scroll-behavior: smooth; }
 .lb-row:hover { background: rgba(59, 130, 246, 0.04); transition: background 0.2s ease; }
 
 /* font: 1776459623883 */
+
+::selection { background: rgba(59, 130, 246, 0.25); color: #fff; }
