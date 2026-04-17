@@ -43,3 +43,5 @@ export const contractConfig = {
   address: CONTRACT_ADDRESS as `0x${string}`,
   abi: CELO_COIN_FLIP_ABI,
 } as const;
+
+// abi: 1776459669624
