@@ -290,3 +290,8 @@ html { scroll-behavior: smooth; }
 /* shadow: 1776750972754 */
 
 /* spacing: 1776751007217 */
+
+/* transition: 1776751060210 */
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-thumb { background: rgba(59, 130, 246, 0.3); border-radius: 3px; }
