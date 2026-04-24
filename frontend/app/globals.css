@@ -571,3 +571,8 @@ html { scroll-behavior: smooth; }
 /* colors: 1777065905571 */
 
 /* transform: 1777065909838 */
+
+/* transition: 1777065946927 */
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-thumb { background: rgba(59, 130, 246, 0.3); border-radius: 3px; }
