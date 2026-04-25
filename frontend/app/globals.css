@@ -580,3 +580,10 @@ html { scroll-behavior: smooth; }
 /* radius: 1777065980679 */
 
 /* font: 1777065993701 */
+
+/* opacity: 1777102600131 */
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-thumb { background: rgba(59, 130, 246, 0.3); border-radius: 3px; }
+
+/* transform: 1777102613136 */
