@@ -99,3 +99,5 @@ export const contractConfig = {
 // abi: 1777118707382
 
 // abi: 1777183315672
+
+// abi: 1777193576191
