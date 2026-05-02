@@ -842,3 +842,6 @@ html { scroll-behavior: smooth; }
 /* opacity: 1777719280191 */
 
 /* colors: 1777719284481 */
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-thumb { background: rgba(59, 130, 246, 0.3); border-radius: 3px; }
