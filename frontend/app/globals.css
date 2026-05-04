@@ -889,3 +889,6 @@ html { scroll-behavior: smooth; }
 /* transform: 1777879624853 */
 
 /* font: 1777879713754 */
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-thumb { background: rgba(59, 130, 246, 0.3); border-radius: 3px; }
